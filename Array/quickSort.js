@@ -1,11 +1,11 @@
 /**
- * 优化版快排
+ * 优化版随机快排
  */
 
  //思路：
- //采用荷兰国旗的方式去优化快排
+ //采用荷兰国旗的方式去优化快排，并用随机数来避免时间复杂度为O(N^2)
 
- function quickSort(arr) {
+function quickSort(arr) {
   const len = arr.length
   if(len < 2 || len === null){return arr}
   let cur = 0
@@ -15,6 +15,7 @@
 
 function sort(arr,cur,right) {
   if(cur < right){
+    swap(arr,cur+parseInt(Math.random()*(right-cur+1)),right)
     let p = partition(arr,cur,right)
     sort(arr,cur,p[0]-1)
     sort(arr,p[1]+1,right)
@@ -44,3 +45,4 @@ function swap(arr,i,j) {
   arr[i] = arr[j]
   arr[j] = tem
 }
+
