@@ -4,6 +4,7 @@
 
  //思路：
  //采用荷兰国旗的方式去优化快排，并用随机数来避免时间复杂度为O(N^2)
+ //时间复杂度为O(N*logN)，额外空间复杂度为O(logN)
 
 function quickSort(arr) {
   const len = arr.length
